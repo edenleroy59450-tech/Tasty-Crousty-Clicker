@@ -1,0 +1,396 @@
+/* ========================= */
+/*      TASTY CROUSTY        */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    user-select:none;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#ffcc00,#ff6b00);
+    overflow:hidden;
+}
+
+/* ========================= */
+/*         HEADER            */
+/* ========================= */
+
+header{
+    width:100%;
+    height:70px;
+    background:#222;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:30px;
+    font-weight:bold;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+}
+
+/* ========================= */
+/*         LAYOUT            */
+/* ========================= */
+
+.container{
+
+    display:grid;
+
+    grid-template-columns:
+    280px
+    1fr
+    350px;
+
+    height:calc(100vh - 70px);
+}
+
+/* ========================= */
+/*      LEFT PANEL           */
+/* ========================= */
+
+.left{
+
+    background:#2c2c2c;
+
+    color:white;
+
+    padding:20px;
+
+    overflow-y:auto;
+}
+
+.left h2{
+
+    text-align:center;
+    margin-bottom:20px;
+
+}
+
+.stats{
+
+    margin-top:20px;
+}
+
+.stats p{
+
+    margin:10px 0;
+
+}
+
+/* ========================= */
+/*       CENTER             */
+/* ========================= */
+
+.center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+}
+
+#score{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+    color:white;
+
+    text-shadow:3px 3px 5px black;
+
+}
+
+#perSecond{
+
+    font-size:22px;
+
+    margin-bottom:40px;
+
+    color:white;
+
+}
+
+/* ========================= */
+/*      COOKIE BUTTON        */
+/* ========================= */
+
+#cookie{
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:150px;
+
+    background:#ffb000;
+
+    transition:.08s;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.45);
+
+}
+
+#cookie:hover{
+
+    transform:scale(1.05);
+
+}
+
+#cookie:active{
+
+    transform:scale(.93);
+
+}
+
+/* ========================= */
+/*      RIGHT PANEL          */
+/* ========================= */
+
+.right{
+
+    background:#1e1e1e;
+
+    color:white;
+
+    overflow-y:auto;
+
+}
+
+.shopTitle{
+
+    text-align:center;
+
+    padding:20px;
+
+    font-size:28px;
+
+    background:#111;
+
+}
+
+/* ========================= */
+/*     SHOP BUTTONS          */
+/* ========================= */
+
+.shopItem{
+
+    margin:12px;
+
+    padding:15px;
+
+    background:#2e2e2e;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.shopItem:hover{
+
+    background:#444;
+
+}
+
+.shopItem h3{
+
+    color:#ffd000;
+
+}
+
+.shopItem p{
+
+    margin-top:8px;
+
+    font-size:15px;
+
+}
+
+.price{
+
+    color:#00ff66;
+
+    font-weight:bold;
+
+}
+
+/* ========================= */
+/*      SCROLLBAR            */
+/* ========================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff9800;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#222;
+
+}
+
+/* ========================= */
+/*      PARTICLES            */
+/* ========================= */
+
+.clickText{
+
+    position:absolute;
+
+    font-size:35px;
+
+    font-weight:bold;
+
+    color:white;
+
+    pointer-events:none;
+
+    animation:float .8s linear forwards;
+
+}
+
+@keyframes float{
+
+    from{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        opacity:0;
+        transform:translateY(-120px);
+
+    }
+
+}
+
+/* ========================= */
+/*       ACHIEVEMENTS        */
+/* ========================= */
+
+.achievement{
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+    background:#00c853;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    animation:slide 4s;
+
+}
+
+@keyframes slide{
+
+    0%{
+
+        right:-350px;
+
+    }
+
+    15%{
+
+        right:20px;
+
+    }
+
+    85%{
+
+        right:20px;
+
+    }
+
+    100%{
+
+        right:-350px;
+
+    }
+
+}
+
+/* ========================= */
+/*       RESPONSIVE          */
+/* ========================= */
+
+@media(max-width:1000px){
+
+.container{
+
+grid-template-columns:1fr;
+
+grid-template-rows:auto auto auto;
+
+}
+
+.left{
+
+height:220px;
+
+}
+
+.right{
+
+height:300px;
+
+}
+
+#cookie{
+
+width:220px;
+
+height:220px;
+
+font-size:90px;
+
+}
+
+#score{
+
+font-size:28px;
+
+}
+
+}

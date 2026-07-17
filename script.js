@@ -10,8 +10,6 @@ let totalClicks = 0;
 
 let prestige = 0;
 
-let upgrades = {};
-
 function clickTasty(){
   tasty += perClick;
   updateUI();

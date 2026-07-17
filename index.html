@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
+<title>Tasty Crousty Clicker</title>
+<style>body{font-family:Arial;text-align:center;background:#222;color:#fff}
+button{font-size:32px;padding:30px;border-radius:20px}#shop button{display:block;margin:10px auto}</style>
+</head><body>
+<h1>🍔 Tasty Crousty Clicker</h1>
+<h2 id=c>0 Tasty Crousty</h2>
+<button onclick="clickTC()">🍔 CLIQUE !</button>
+<div id=shop><h3>Boutique</h3>
+<button onclick="buy()">Restaurant (+1/s) - <span id=p>25</span></button></div>
+<script>
+let tc=0,cps=0,price=25;
+function upd(){c.textContent=Math.floor(tc)+" Tasty Crousty";p.textContent=price;}
+function clickTC(){tc++;upd();}
+function buy(){if(tc>=price){tc-=price;cps++;price=Math.floor(price*1.5);upd();}}
+setInterval(()=>{tc+=cps;upd();},1000);upd();
+</script></body></html>
